@@ -1,5 +1,7 @@
-FROM tutum/curl:trusty
-MAINTAINER Feng Honglin <hfeng@tutum.co>
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y curl && apt-get clean && rm -rf /var/lib/apt/lists
+
+MAINTAINER ayanamist
 
 # Install InfluxDB
 ENV INFLUXDB_VERSION 0.9.6.1
